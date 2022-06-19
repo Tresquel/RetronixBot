@@ -3,6 +3,10 @@ import json
 import os
 bot = interactions.Client(token=os.environ["TOKEN"])
 
+if not os.path.isfile("items.json"):
+    with open("items.json", "w") as f:
+        json.dump({}, f)
+        
 with open("items.json", "r") as read_content:
     ItemData = json.load(read_content)
 
