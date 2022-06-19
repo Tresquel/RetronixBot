@@ -6,7 +6,7 @@ bot = interactions.Client(token=os.environ["TOKEN"])
 if not os.path.isfile("items.json"):
     with open("items.json", "w") as f:
         json.dump({}, f)
-        
+
 with open("items.json", "r") as read_content:
     ItemData = json.load(read_content)
 
@@ -27,7 +27,7 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
         embed = interactions.Embed(
             title=ItemData[item_id]["name"],
             image=interactions.EmbedImageStruct(url="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19/assets/minecraft/textures/item/" + ItemData[item_id]["id"] + ".png"),
-            color=0x26E600
+            color=0x00cc22
         )
         embed.add_field(
             name="ID:",
