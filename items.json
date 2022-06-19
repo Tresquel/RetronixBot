@@ -1,0 +1,26 @@
+{
+    "item1": {
+        "name": "Test item",
+        "id": "diamond_sword",
+        "current_owner": "stachu",
+        "price": 100,
+        "purchase_date": "<t:1655649660:d>",
+        "NBT_data": {
+            "Enchantments": [
+                {
+                    "sharpness": 5,
+                    "unbreaking": 3,
+                    "mending": 1
+                }
+            ],
+            "display": {
+                "Name":[
+                    {
+                        "text": "Siuu",
+                        "italic": true
+                    }
+                ]
+            }
+        }
+    }
+}
