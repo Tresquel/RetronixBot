@@ -22,7 +22,12 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
     if(item_id in ItemData):
         embed = interactions.Embed(
             title=ItemData[item_id]["name"],
-            type="rich",    
+            image=interactions.EmbedImageStruct(url="https://raw.githubusercontent.com/InventivetalentDev/minecraft-assets/1.19/assets/minecraft/textures/item/" + ItemData[item_id]["id"] + ".png"),
+            color=0x26E600
+        )
+        embed.add_field(
+            name="ID:",
+            value=item_id
         )
         embed.add_field(
             name="Current owner:",
@@ -30,7 +35,6 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
         )
         embed.add_field(
             name="Last sold for:",
-            #value is the price with a dollar sign at the end
             value=f"${ItemData[item_id]['price']}"
         )
         embed.add_field(
@@ -39,6 +43,14 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
         )
         await ctx.send(embeds=embed)
     else:
-        await ctx.send("Item not found")
+        embed = interactions.Embed(
+            title="Item not found",
+            color=0xff1919
+        )
+        embed.add_field(
+            name="Hmm, I can't find that item",
+            value="I can't seem to find the item you requested.\nPlease make sure the ID you entered is correct."
+        )
+        await ctx.send(embeds=embed)
 
 bot.start()

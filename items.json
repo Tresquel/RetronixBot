@@ -1,6 +1,6 @@
 {
-    "item1": {
-        "name": "Test item",
+    "1": {
+        "name": "A mighty sword",
         "id": "diamond_sword",
         "current_owner": "stachu",
         "price": 100,
