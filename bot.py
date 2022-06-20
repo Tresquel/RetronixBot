@@ -1,6 +1,9 @@
 import interactions
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 bot = interactions.Client(token=os.environ["TOKEN"])
 
 if not os.path.isfile("items.json"):
