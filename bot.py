@@ -85,6 +85,7 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
 @bot.command(
     name="createitems",
     description="Create items",
+    default_member_permissions=interactions.Permissions.ADMINISTRATOR,
     options = [
         interactions.Option(
             name="item_id",
@@ -116,12 +117,11 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
             type=interactions.OptionType.INTEGER,
             required=True,
         ),
-    ]
+    ],
 )
 async def CreateItems(ctx: interactions.CommandContext, item_id: str, item_name: str, item_description: str, item_price: int, count: int):
     if(item_id in ids):
-        if(" " in item_name):
-            lowername = item_name.replace(" ", "_").lower()
+        lowername = item_name.replace(" ", "_").lower()
         for i in range(count):
             ItemData[lowername + str(i)] = {
                 "name": item_name,
