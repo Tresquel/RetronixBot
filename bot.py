@@ -122,7 +122,7 @@ async def GetItemInfo(ctx: interactions.CommandContext, item_id: str):
 async def CreateItems(ctx: interactions.CommandContext, item_id: str, item_name: str, item_description: str, item_price: int, count: int):
     if(item_id in ids):
         lowername = item_name.replace(" ", "_").lower()
-        for i in range(count):
+        for i in range(1, count + 1):
             ItemData[lowername + str(i)] = {
                 "name": item_name,
                 "description": item_description,
@@ -139,7 +139,7 @@ async def CreateItems(ctx: interactions.CommandContext, item_id: str, item_name:
             color=0x00cc22
         )
         string = ""
-        for i in range(count):
+        for i in range(1, count + 1):
             string += f"{lowername}{i}\n"
         embed.add_field(
             name="Items created:",
